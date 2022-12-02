@@ -39,8 +39,8 @@ if grep -q 1 /proc/sys/net/ipv4/ip_forward; then
 fi
 
 # Network interfaces when running in router mode (must fill up)
-LAN_IF=		# lan interface
-NET_IF=		# internet interface
+LAN_IF=eth0		# lan interface
+NET_IF=eth0		# internet interface
 
 debug=""
 #debug=y
