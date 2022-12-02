@@ -63,5 +63,5 @@ fi
 cmd="$mitmdump --mode transparent --showhost"	# transparent proxy  (recent mitmproxy versions)
 #cmd="mitmdump -T --host"			# transparent proxy  (old mitmproxy versions)
 
-$mitmproxy_wrapper "$@" $cmd | grep --line-buffered ' http'  | cut -d\  -f3-
+$mitmproxy_wrapper "$@" $cmd &> dump.txt
 
