@@ -63,5 +63,6 @@ fi
 cmd="$mitmdump --mode transparent --showhost --flow-detail 2"	# transparent proxy  (recent mitmproxy versions)
 #cmd="mitmdump -T --host"			# transparent proxy  (old mitmproxy versions)
 
-$mitmproxy_wrapper "$@" $cmd &> dump.txt
+trap "tail -n +4 dump_raw.txt | grep ' http' | cut -d\  -f3 - > dump.txt" EXIT
+$mitmproxy_wrapper "$@" $cmd &> dump_raw.txt
 
