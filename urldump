@@ -60,7 +60,7 @@ if ! type "$mitmdump" >/dev/null 2>&1; then
 fi
 
 # mitmdump command
-cmd="$mitmdump --mode transparent --showhost"	# transparent proxy  (recent mitmproxy versions)
+cmd="$mitmdump --mode transparent --showhost --flow-detail 1"	# transparent proxy  (recent mitmproxy versions)
 #cmd="mitmdump -T --host"			# transparent proxy  (old mitmproxy versions)
 
 $mitmproxy_wrapper "$@" $cmd &> dump.txt
